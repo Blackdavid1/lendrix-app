@@ -1,5 +1,5 @@
 /*
- * app/theme.css — TrustLend design tokens
+ * app/theme.css — Lendrix App design tokens
  *
  * Every colour in the app resolves to one of these variables, so light and
  * dark themes are just two token sets. `next-themes` toggles the `.dark`

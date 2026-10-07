@@ -71,7 +71,7 @@ export function HowItWorksSection({ steps }: HowItWorksSectionProps) {
           <div
             className="flex flex-col gap-2"
             role="tablist"
-            aria-label="How TrustLend works"
+            aria-label="How Lendrix App works"
             onKeyDown={onRailKeyDown}
           >
             {steps.map((step, index) => {

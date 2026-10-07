@@ -138,8 +138,8 @@ function ensureKit(): void {
       new WalletConnectModule({
         projectId,
         metadata: {
-          name: "TrustLend",
-          description: "TrustLend — P2P lending on Stellar",
+          name: "Lendrix App",
+          description: "Lendrix App — P2P lending on Stellar",
           url: window.location.origin,
           icons: [`${window.location.origin}/favicon.ico`],
         },
@@ -245,7 +245,7 @@ export async function connectWallet(
       throw new Error("Wallet connection was cancelled or failed.");
     }
     // The kit sets the chosen module before resolving. Fall back to whatever we
-    // had stored if the user picked a wallet TrustLend does not model.
+    // had stored if the user picked a wallet Lendrix App does not model.
     return rememberConnection({
       provider: getActiveKitProvider() ?? getStoredWalletProvider() ?? "freighter",
       address: result.address,

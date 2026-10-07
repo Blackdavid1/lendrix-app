@@ -48,7 +48,7 @@ export function AuthPageClient() {
 
         <Link href="/" className="relative flex items-center gap-2.5">
           <Image src="/logo.png" alt="" width={36} height={36} className="h-9 w-9 rounded-xl object-cover" />
-          <span className="font-display text-lg font-bold tracking-tight">TrustLend</span>
+          <span className="font-display text-lg font-bold tracking-tight">Lendrix App</span>
         </Link>
 
         <div className="relative max-w-md">
@@ -60,7 +60,7 @@ export function AuthPageClient() {
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold backdrop-blur">
               {meta ? <meta.icon className="h-3.5 w-3.5" /> : <Sparkles className="h-3.5 w-3.5" />}
-              {meta ? `Joining as ${meta.label}` : "Welcome to TrustLend"}
+              {meta ? `Joining as ${meta.label}` : "Welcome to Lendrix App"}
             </span>
             <h2 className="mt-5 font-display text-3xl font-bold leading-tight tracking-tight xl:text-4xl">
               {meta ? meta.tagline : "Credit built on behavior, not collateral."}
@@ -101,7 +101,7 @@ export function AuthPageClient() {
         >
           <div className="mb-8 flex items-center gap-2.5 lg:hidden">
             <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8 rounded-lg object-cover" />
-            <span className="font-display text-lg font-bold tracking-tight">TrustLend</span>
+            <span className="font-display text-lg font-bold tracking-tight">Lendrix App</span>
           </div>
 
           <h1 className="font-display text-3xl font-bold tracking-tight">Connect your wallet</h1>
@@ -159,7 +159,7 @@ export function AuthPageClient() {
           </p>
 
           <p className="mt-10 text-center text-xs text-fg-subtle">
-            By continuing you agree to TrustLend&apos;s{" "}
+            By continuing you agree to Lendrix App&apos;s{" "}
             <a href="#" className="font-medium text-fg-muted underline-offset-2 hover:underline">
               Terms
             </a>{" "}

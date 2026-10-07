@@ -41,7 +41,7 @@ const server = new rpc.Server(RPC_URL, { allowHttp: RPC_URL.startsWith("http://"
 
 /** Formats a Discord embed message */
 function formatDiscordPayload(topic: string, eventData: Record<string, unknown>) {
-  let title = "TrustLend Event";
+  let title = "Lendrix App Event";
   let color = 16777215; // White
   const fields: Record<string, unknown>[] = [];
   
@@ -71,7 +71,7 @@ function formatDiscordPayload(topic: string, eventData: Record<string, unknown>)
         title,
         color,
         fields,
-        footer: { text: "TrustLend Automations" },
+        footer: { text: "Lendrix App Automations" },
         timestamp: new Date().toISOString()
       }
     ]
@@ -80,7 +80,7 @@ function formatDiscordPayload(topic: string, eventData: Record<string, unknown>)
 
 /** Formats a Telegram message */
 function formatTelegramPayload(topic: string, eventData: Record<string, unknown>) {
-  let text = "TrustLend Event\n";
+  let text = "Lendrix App Event\n";
   if (topic === "loan_originated") {
     text = `🚨 *Large Loan Originated!* 🚨\n\n*Borrower:* \`${eventData.borrower}\`\n`;
     if (eventData.amountXLM) {
@@ -201,7 +201,7 @@ async function startListener() {
                continue;
             }
 
-            // TrustLend amount in stroops (10^7)
+            // Lendrix App amount in stroops (10^7)
             const amountStroops = (loanData.amount as bigint) || (loanData.principal_amount as bigint) || 0n;
             const amountXLM = Number(amountStroops) / 10000000;
             

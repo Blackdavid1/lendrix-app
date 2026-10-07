@@ -77,10 +77,10 @@ export async function updateUserProfile(
 
     await db.update(profiles).set(updates).where(eq(profiles.id, user.id));
 
-    console.log(`[TrustLend] Profile updated for user ${user.id}`);
+    console.log(`[Lendrix App] Profile updated for user ${user.id}`);
     return { success: true };
   } catch (err) {
-    console.error("[TrustLend] updateUserProfile unexpected error:", err);
+    console.error("[Lendrix App] updateUserProfile unexpected error:", err);
     return {
       success: false,
       error: err instanceof Error ? err.message : "An unexpected error occurred.",

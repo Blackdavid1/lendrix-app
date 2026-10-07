@@ -140,7 +140,7 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({
     ok: true,
-    service: "TrustLend KYC Webhook",
+    service: "Lendrix App KYC Webhook",
     provider: "SumSub",
   });
 }

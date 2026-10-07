@@ -137,7 +137,7 @@ export function DepositFiatButton({ walletAddress }: DepositFiatButtonProps) {
       setInteractiveUrl(session.url);
       const popup = window.open(
         session.url,
-        "trustlend_sep24_deposit",
+        "lendrix_sep24_deposit",
         "width=480,height=720,menubar=no,toolbar=no"
       );
       if (!popup) {

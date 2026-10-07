@@ -29,26 +29,26 @@ afterEach(() => {
 
 describe("resolveSiteUrl", () => {
   it("prefers NEXT_PUBLIC_SITE_URL above everything else", () => {
-    process.env.NEXT_PUBLIC_SITE_URL = "https://trustlend.app";
+    process.env.NEXT_PUBLIC_SITE_URL = "https://lendrix.app";
     process.env.VERCEL_URL = "preview.vercel.app";
     expect(resolveSiteUrl(requestWith({ host: "localhost:3000" }))).toBe(
-      "https://trustlend.app",
+      "https://lendrix.app",
     );
   });
 
   it("strips a trailing slash so a path can be appended safely", () => {
-    process.env.NEXT_PUBLIC_SITE_URL = "https://trustlend.app/";
-    expect(resolveSiteUrl()).toBe("https://trustlend.app");
+    process.env.NEXT_PUBLIC_SITE_URL = "https://lendrix.app/";
+    expect(resolveSiteUrl()).toBe("https://lendrix.app");
   });
 
   it("adds a scheme when the configured value has none", () => {
-    process.env.NEXT_PUBLIC_SITE_URL = "trustlend.app";
-    expect(resolveSiteUrl()).toBe("https://trustlend.app");
+    process.env.NEXT_PUBLIC_SITE_URL = "lendrix.app";
+    expect(resolveSiteUrl()).toBe("https://lendrix.app");
   });
 
   it("falls back to VERCEL_URL on preview deployments", () => {
-    process.env.VERCEL_URL = "trustlend-abc123.vercel.app";
-    expect(resolveSiteUrl()).toBe("https://trustlend-abc123.vercel.app");
+    process.env.VERCEL_URL = "lendrix-abc123.vercel.app";
+    expect(resolveSiteUrl()).toBe("https://lendrix-abc123.vercel.app");
   });
 
   it("uses the request host when no env var is configured", () => {
@@ -62,11 +62,11 @@ describe("resolveSiteUrl", () => {
       resolveSiteUrl(
         requestWith({
           host: "internal:8080",
-          "x-forwarded-host": "trustlend.app",
+          "x-forwarded-host": "lendrix.app",
           "x-forwarded-proto": "https",
         }),
       ),
-    ).toBe("https://trustlend.app");
+    ).toBe("https://lendrix.app");
   });
 
   it("uses http for localhost so dev links are clickable", () => {

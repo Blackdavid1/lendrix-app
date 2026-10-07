@@ -1,6 +1,6 @@
 # On-Chain Loan Lifecycle & Payment Verification
 
-TrustLend moves XLM with classic Stellar payment operations that the user's
+Lendrix App moves XLM with classic Stellar payment operations that the user's
 wallet signs, and records loan *state* on the Soroban `LendingContract`. This
 document describes how the two are tied together and verified server-side.
 
@@ -114,7 +114,7 @@ payment ────────────────────────
 | `NEXT_PUBLIC_PLATFORM_STELLAR_ADDRESS` / `PLATFORM_FEE_WALLET` | Deposit and fee destination the routes verify against |
 | `PLATFORM_WALLET_SECRET` | Pays pool withdrawals |
 
-`stellar keys show trustlend-admin` prints the admin secret after a deploy.
+`stellar keys show lendrix-admin` prints the admin secret after a deploy.
 
 Set `NEXT_PUBLIC_ONCHAIN_LOAN_LIFECYCLE=off` to run database-only (for example
 against a stale contract deployment); the routes then skip the contract calls

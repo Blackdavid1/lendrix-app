@@ -42,10 +42,10 @@ export function SiteHeader({ items, isAuthenticated = false }: SiteHeaderProps) 
       transition={{ duration: 0.5, ease: EASE_OUT }}
     >
       <div className="crypto-container flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="TrustLend home">
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Lendrix App home">
           <Image src="/logo.png" alt="" width={36} height={36} priority className="h-9 w-9 rounded-xl object-cover" />
           <span className="leading-tight">
-            <strong className="block font-display text-base font-bold tracking-tight text-fg">TrustLend</strong>
+            <strong className="block font-display text-base font-bold tracking-tight text-fg">Lendrix App</strong>
             <small className="hidden text-[11px] text-fg-subtle sm:block">Behavior-first credit on Stellar</small>
           </span>
         </Link>

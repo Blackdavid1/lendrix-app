@@ -1,13 +1,13 @@
-# TrustLend API Integration Guide
+# Lendrix App API Integration Guide
 
-This guide describes how third-party platforms and integrations can query TrustLend lending/borrowing pools and fetch credit reputation scores for borrowers on the Stellar network.
+This guide describes how third-party platforms and integrations can query Lendrix App lending/borrowing pools and fetch credit reputation scores for borrowers on the Stellar network.
 
 ## Base URL
 
-All requests should be made to the root domain hosting the TrustLend application:
+All requests should be made to the root domain hosting the Lendrix App application:
 
 ```http
-https://trustlend.xyz/api
+https://lendrix.xyz/api
 ```
 *(For local development, use `http://localhost:3000/api`)*
 
@@ -63,13 +63,13 @@ Accept: application/json
 
 #### cURL
 ```bash
-curl -X GET "https://trustlend.xyz/api/pools?status=active&limit=5" \
+curl -X GET "https://lendrix.xyz/api/pools?status=active&limit=5" \
   -H "Accept: application/json"
 ```
 
 #### JavaScript (Fetch)
 ```javascript
-fetch("https://trustlend.xyz/api/pools?status=active&limit=5", {
+fetch("https://lendrix.xyz/api/pools?status=active&limit=5", {
   method: "GET",
   headers: {
     "Accept": "application/json"
@@ -151,7 +151,7 @@ Accept: application/json
 
 #### cURL
 ```bash
-curl -X GET "https://trustlend.xyz/api/reputation?address=GB2R23XNZKHY77777777777777777777777777777777777777777777" \
+curl -X GET "https://lendrix.xyz/api/reputation?address=GB2R23XNZKHY77777777777777777777777777777777777777777777" \
   -H "Accept: application/json"
 ```
 
@@ -159,7 +159,7 @@ curl -X GET "https://trustlend.xyz/api/reputation?address=GB2R23XNZKHY7777777777
 ```javascript
 const walletAddress = "GB2R23XNZKHY77777777777777777777777777777777777777777777";
 
-fetch(`https://trustlend.xyz/api/reputation?address=${walletAddress}`, {
+fetch(`https://lendrix.xyz/api/reputation?address=${walletAddress}`, {
   method: "GET",
   headers: {
     "Accept": "application/json"

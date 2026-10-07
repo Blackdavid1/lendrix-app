@@ -105,9 +105,9 @@ async function main() {
   console.log("Starting seeded E2E run...\n");
 
   try {
-    const borrower = await ensureUser(client, E2E_WALLETS.borrower, "e2e.borrower@trustlend.local", "borrower", "E2E Borrower");
-    const lender = await ensureUser(client, E2E_WALLETS.lender, "e2e.lender@trustlend.local", "lender", "E2E Lender");
-    const admin = await ensureUser(client, E2E_WALLETS.admin, "e2e.admin@trustlend.local", "admin", "E2E Admin");
+    const borrower = await ensureUser(client, E2E_WALLETS.borrower, "e2e.borrower@lendrix.local", "borrower", "E2E Borrower");
+    const lender = await ensureUser(client, E2E_WALLETS.lender, "e2e.lender@lendrix.local", "lender", "E2E Lender");
+    const admin = await ensureUser(client, E2E_WALLETS.admin, "e2e.admin@lendrix.local", "admin", "E2E Admin");
 
     // Ensure borrower can request loans.
     await client.query(

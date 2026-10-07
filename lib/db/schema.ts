@@ -1,7 +1,7 @@
 /**
  * lib/db/schema.ts
  *
- * Drizzle schema for the TrustLend Postgres database (Neon).
+ * Drizzle schema for the Lendrix App Postgres database (Neon).
  *
  * This is the single source of truth for the relational model. Migrations are
  * generated from it with `npm run db:generate` and applied with

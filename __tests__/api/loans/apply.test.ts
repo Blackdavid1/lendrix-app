@@ -120,7 +120,7 @@ describe("POST /api/loans/apply - Dynamic APR from the admin schedule", () => {
         amountTiers: [{ minAmount: 500, aprBps: 1650 }],
         reputationTiers: [{ minScore: 0, multiplierBps: 10000 }],
         notes: "Market repricing",
-        updatedByEmail: "admin@trustlend.org",
+        updatedByEmail: "admin@lendrix.app",
         updatedAt: new Date("2026-09-01T00:00:00.000Z"),
       },
     });
@@ -149,7 +149,7 @@ describe("POST /api/loans/apply - Dynamic APR from the admin schedule", () => {
         { minScore: 750, multiplierBps: 9000 },
       ],
       notes: "Trust-weighted pricing",
-      updatedByEmail: "admin@trustlend.org",
+      updatedByEmail: "admin@lendrix.app",
       updatedAt: null,
     };
 
@@ -203,7 +203,7 @@ describe("POST /api/loans/apply - Dynamic APR from the admin schedule", () => {
           amountTiers: [],
           reputationTiers: [],
           notes: "Floating base",
-          updatedByEmail: "admin@trustlend.org",
+          updatedByEmail: "admin@lendrix.app",
           updatedAt: null,
         },
       }),

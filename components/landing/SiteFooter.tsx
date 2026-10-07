@@ -8,7 +8,7 @@ interface SiteFooterProps {
   links: FooterLink[];
 }
 
-const REPO_URL = "https://github.com/thisisouvik/trustlend-stellar";
+const REPO_URL = "https://github.com/thisisouvik/lendrix-app";
 
 export function SiteFooter({ links }: SiteFooterProps) {
   const year = new Date().getFullYear();
@@ -16,9 +16,9 @@ export function SiteFooter({ links }: SiteFooterProps) {
     <footer className="border-t border-border bg-surface">
       <div className="crypto-container grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="max-w-sm">
-          <Link href="/" className="flex items-center gap-2.5" aria-label="TrustLend home">
+          <Link href="/" className="flex items-center gap-2.5" aria-label="Lendrix App home">
             <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8 rounded-lg object-cover" />
-            <span className="font-display text-lg font-bold tracking-tight text-fg">TrustLend</span>
+            <span className="font-display text-lg font-bold tracking-tight text-fg">Lendrix App</span>
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-fg-muted">
             Credit infrastructure built on real behavior, not collateral bias. Borrowers and lenders meet in one
@@ -71,7 +71,7 @@ export function SiteFooter({ links }: SiteFooterProps) {
 
       <div className="border-t border-border">
         <div className="crypto-container flex flex-col gap-2 py-5 text-xs text-fg-subtle sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} TrustLend. MIT licensed.</p>
+          <p>© {year} Lendrix App. MIT licensed.</p>
           <p>Running on Stellar testnet · Not financial advice.</p>
         </div>
       </div>

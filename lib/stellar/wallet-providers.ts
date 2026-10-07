@@ -1,7 +1,7 @@
 /**
  * lib/stellar/wallet-providers.ts
  *
- * Pure (kit-free) helpers describing the Stellar wallets TrustLend supports.
+ * Pure (kit-free) helpers describing the Stellar wallets Lendrix App supports.
  *
  * This module deliberately has **no** `@creit.tech/stellar-wallets-kit` import so
  * it can be unit tested in a plain Node environment — the kit pulls in Preact,
@@ -76,7 +76,7 @@ export function getWalletModuleId(provider: StellarWalletProvider): string {
 }
 
 /**
- * Reverse of {@link getWalletModuleId}. Returns `null` for kit modules TrustLend
+ * Reverse of {@link getWalletModuleId}. Returns `null` for kit modules Lendrix App
  * does not register (Lobstr, Ledger, …) so callers can fall back sensibly rather
  * than blind-casting an unknown id into `StellarWalletProvider`.
  */

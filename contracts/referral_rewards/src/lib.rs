@@ -1,5 +1,5 @@
 #![no_std]
-//! Referral rewards for TrustLend (Issue #266).
+//! Referral rewards for Lendrix App (Issue #266).
 //!
 //! A user who invites a friend earns a bonus once that friend actually takes
 //! out a loan. The lending contract calls [`ReferralRewardsContract::claim_referral_bonus`]

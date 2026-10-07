@@ -19,7 +19,7 @@ const OPTIONS: Array<{ value: ThemeValue; icon: typeof Sun; label: string }> = [
  *
  * A three-way segmented control (light / dark / system). The choice is
  * delegated to next-themes, which persists it to localStorage (under the
- * `trustlend-theme` key) and applies the `.dark` class before paint. The
+ * `lendrix-theme` key) and applies the `.dark` class before paint. The
  * default is `system`, so first-time visitors get their OS preference.
  */
 export function ThemeToggle({ className = "" }: { className?: string }) {

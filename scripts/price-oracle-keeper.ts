@@ -126,14 +126,14 @@ export async function sendOracleAlert(
   if (cfg.slackWebhookUrl) {
     tasks.push(
       postJson(cfg.slackWebhookUrl, {
-        text: `${badge} *TrustLend Price Oracle*\n${message}`,
+        text: `${badge} *Lendrix App Price Oracle*\n${message}`,
       }),
     );
   }
   if (cfg.discordWebhookUrl) {
     tasks.push(
       postJson(cfg.discordWebhookUrl, {
-        content: `${badge} **TrustLend Price Oracle**\n${message}`,
+        content: `${badge} **Lendrix App Price Oracle**\n${message}`,
       }),
     );
   }

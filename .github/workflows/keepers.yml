@@ -5,7 +5,7 @@ name: Keepers (liquidation + price oracle)
 # every 5 minutes, so it pings the same authenticated cron endpoints instead.
 #
 # Required repository secrets:
-#   KEEPER_BASE_URL  e.g. https://trustlend-stellar.vercel.app  (no trailing slash)
+#   KEEPER_BASE_URL  e.g. https://lendrix-app.vercel.app  (no trailing slash)
 #   CRON_SECRET      must match the CRON_SECRET env var configured on Vercel
 #
 # The workflow is a no-op until both secrets exist, so it is safe on forks.

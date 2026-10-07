@@ -1,4 +1,4 @@
-name: TrustLend CI/CD
+name: Lendrix App CI/CD
 
 on:
   push:

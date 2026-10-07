@@ -1,7 +1,7 @@
 import { describe, expect, it, beforeEach } from "vitest";
 
 describe("Dark Mode UI Preference & Storage (#258)", () => {
-  const STORAGE_KEY = "trustlend-theme";
+  const STORAGE_KEY = "lendrix-theme";
 
   beforeEach(() => {
     // Clear mock localStorage
@@ -11,7 +11,7 @@ describe("Dark Mode UI Preference & Storage (#258)", () => {
     }
   });
 
-  it("persists theme preference to localStorage using 'trustlend-theme' key", () => {
+  it("persists theme preference to localStorage using 'lendrix-theme' key", () => {
     // Simulate setting dark theme
     const themeToSet = "dark";
     if (typeof window !== "undefined") {

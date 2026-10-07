@@ -110,7 +110,7 @@ Three independent adapters, each of which returns `[]` rather than throwing:
 | Binance | XLM, BTC | USDT pairs, treated as 1 USD |
 | Stellar DEX | XLM only | Horizon orderbook mid-price vs USDC |
 
-The Stellar DEX source is the only one native to the chain TrustLend runs on,
+The Stellar DEX source is the only one native to the chain Lendrix App runs on,
 so the feed keeps working even if every centralised API is unreachable. BTC is
 deliberately **not** quoted from the Stellar DEX — its orderbook there is thin
 enough that a mid-price would be misleading.

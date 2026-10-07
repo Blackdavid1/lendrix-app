@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * TrustLend — one-command Soroban deployment CLI (Issue #270).
+ * Lendrix App — one-command Soroban deployment CLI (Issue #270).
  *
  *   npm run deploy:testnet
  *
@@ -77,7 +77,7 @@ type Options = {
 };
 
 const HELP = `
-TrustLend — Soroban testnet deployment CLI
+Lendrix App — Soroban testnet deployment CLI
 
 Usage:
   npm run deploy:testnet                    Deploy everything, write .env.local
@@ -85,7 +85,7 @@ Usage:
 
 Options:
   --network <name>      Stellar network (default: testnet)
-  --admin-key <name>    Stellar CLI identity to deploy with (default: trustlend-admin)
+  --admin-key <name>    Stellar CLI identity to deploy with (default: lendrix-admin)
                         Created and funded automatically if it does not exist.
   --out-env <path>      Env file to update in place (default: .env.local)
                         (--env-file also works, but only as --env-file=<path>)
@@ -107,8 +107,8 @@ Environment overrides:
   MULTISIG_SIGNERS            Comma-separated G... signers (default: admin only)
   MULTISIG_THRESHOLD          Approvals needed (default: 1)
   ORACLE_ADDRESS              Authorize a credit-score oracle during deploy
-  TLEND_TOTAL_SUPPLY          Raw units minted to admin (default: 1000000000000)
-  TLEND_AIRDROP_MERKLE_ROOT   64-char hex root; airdrop init is skipped without it
+  LENDRIX_TOTAL_SUPPLY          Raw units minted to admin (default: 1000000000000)
+  LENDRIX_AIRDROP_MERKLE_ROOT   64-char hex root; airdrop init is skipped without it
   USDC_TOKEN_ADDRESS          USDC SAC / token contract for the USDC pool (init skipped without it)
   INSURANCE_FUND_ADDRESS      Treasury insurance destination (default: default-management contract)
   DAO_TREASURY_ADDRESS        Treasury DAO destination (default: admin address)
@@ -117,13 +117,13 @@ After deploying, the app needs:
   NEXT_PUBLIC_ONCHAIN_LOAN_LIFECYCLE=required   (default when a lending id is set)
   ADMIN_SECRET_KEY=<secret of the admin identity>  so the server can sign
   activate_loan / record_payment / update_pool_state. Print it with:
-    stellar keys show trustlend-admin
+    stellar keys show lendrix-admin
 `;
 
 function parseArgs(argv: string[]): Options {
   const options: Options = {
     network: "testnet",
-    adminKey: "trustlend-admin",
+    adminKey: "lendrix-admin",
     envFile: ".env.local",
     skipBuild: false,
     skipBindings: false,
@@ -551,8 +551,8 @@ function initializeContracts(
     initializeMultisig(ids, adminAddress, options);
   }
 
-  if (has("tlend_token")) {
-    initializeTlend(ids, adminAddress, options);
+  if (has("lendrix_token")) {
+    initializeLendrix(ids, adminAddress, options);
   }
 
   initializeSatellites(ids, adminAddress, options);
@@ -583,7 +583,7 @@ function initializeSatellites(
 ): void {
   const has = (key: string) => Boolean(ids[key]);
   const xlm = nativeAssetContractId(options.network);
-  const rewardToken = ids.tlend_token || xlm;
+  const rewardToken = ids.lendrix_token || xlm;
 
   if (has("lending") && has("multisig_admin")) {
     // Loan requests need at least one whitelisted collateral asset; native
@@ -823,61 +823,61 @@ function proposeAndExecute(
   log.ok(`${label} proposed and executed via multisig`);
 }
 
-function initializeTlend(
+function initializeLendrix(
   ids: Record<string, string>,
   adminAddress: string,
   options: Options
 ): void {
-  const totalSupply = process.env.TLEND_TOTAL_SUPPLY ?? "1000000000000";
+  const totalSupply = process.env.LENDRIX_TOTAL_SUPPLY ?? "1000000000000";
 
   invoke(
-    ids.tlend_token,
+    ids.lendrix_token,
     "initialize",
     [
       "--admin", adminAddress,
       "--decimals", "7",
-      "--name", "TrustLend",
-      "--symbol", "TLEND",
+      "--name", "Lendrix App",
+      "--symbol", "LENDRIX",
     ],
     options
   );
   invoke(
-    ids.tlend_token,
+    ids.lendrix_token,
     "mint",
     ["--to", adminAddress, "--amount", totalSupply],
     options
   );
-  log.ok(`TlendTokenContract initialized (minted ${totalSupply} raw units)`);
+  log.ok(`LendrixTokenContract initialized (minted ${totalSupply} raw units)`);
 
-  if (ids.tlend_vesting) {
+  if (ids.lendrix_vesting) {
     invoke(
-      ids.tlend_vesting,
+      ids.lendrix_vesting,
       "initialize",
-      ["--admin", adminAddress, "--token", ids.tlend_token],
+      ["--admin", adminAddress, "--token", ids.lendrix_token],
       options
     );
-    log.ok("TlendVestingContract initialized");
+    log.ok("LendrixVestingContract initialized");
     log.info("Create schedules later with create_vesting_schedule");
   }
 
-  if (ids.tlend_airdrop) {
-    const merkleRoot = process.env.TLEND_AIRDROP_MERKLE_ROOT;
+  if (ids.lendrix_airdrop) {
+    const merkleRoot = process.env.LENDRIX_AIRDROP_MERKLE_ROOT;
 
     if (merkleRoot) {
       invoke(
-        ids.tlend_airdrop,
+        ids.lendrix_airdrop,
         "initialize",
         [
           "--admin", adminAddress,
-          "--token", ids.tlend_token,
+          "--token", ids.lendrix_token,
           "--merkle_root", merkleRoot,
         ],
         options
       );
-      log.ok("TlendAirdropContract initialized — fund the pool before claims open");
+      log.ok("LendrixAirdropContract initialized — fund the pool before claims open");
     } else {
       log.info(
-        "Skipping airdrop initialization — set TLEND_AIRDROP_MERKLE_ROOT to enable it"
+        "Skipping airdrop initialization — set LENDRIX_AIRDROP_MERKLE_ROOT to enable it"
       );
     }
   }
@@ -984,7 +984,7 @@ async function main(): Promise<void> {
   }
 
   console.log(RULE);
-  console.log("  TrustLend — Soroban Deployment");
+  console.log("  Lendrix App — Soroban Deployment");
   console.log(`  Network : ${options.network}`);
   console.log(`  Contracts: ${selected.length}`);
   if (DRY_RUN) console.log("  Mode    : DRY RUN (nothing will be executed)");

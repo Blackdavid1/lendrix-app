@@ -1,11 +1,11 @@
 # Disaster Recovery — Database Backups
 
-How TrustLend's PostgreSQL database is backed up, and how to restore it.
+How Lendrix App's PostgreSQL database is backed up, and how to restore it.
 
 - **Schedule:** every day at **00:00 UTC**
 - **Runner:** [`.github/workflows/db-backup.yml`](../.github/workflows/db-backup.yml)
 - **Script:** [`scripts/backup.sh`](../scripts/backup.sh)
-- **Destination:** `s3://$S3_BUCKET/backups/YYYY/MM/trustlend-<timestamp>.dump.enc`
+- **Destination:** `s3://$S3_BUCKET/backups/YYYY/MM/lendrix-<timestamp>.dump.enc`
 - **Encryption:** AES-256-CBC (PBKDF2, 600k iterations) applied **before** upload
 - **Retention:** 30 days by default (`BACKUP_RETENTION_DAYS`)
 
@@ -59,10 +59,10 @@ from the database — a backup that shares a failure domain with production is n
 an off-site backup.
 
 ```bash
-aws s3api create-bucket --bucket trustlend-backups --region us-east-1
-aws s3api put-bucket-versioning --bucket trustlend-backups \
+aws s3api create-bucket --bucket lendrix-backups --region us-east-1
+aws s3api put-bucket-versioning --bucket lendrix-backups \
   --versioning-configuration Status=Enabled
-aws s3api put-public-access-block --bucket trustlend-backups \
+aws s3api put-public-access-block --bucket lendrix-backups \
   --public-access-block-configuration \
   "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
 ```
@@ -71,7 +71,7 @@ A lifecycle policy is more robust than the script's prune, because it keeps
 working even if the job stops running:
 
 ```bash
-aws s3api put-bucket-lifecycle-configuration --bucket trustlend-backups \
+aws s3api put-bucket-lifecycle-configuration --bucket lendrix-backups \
   --lifecycle-configuration '{
     "Rules": [{
       "ID": "expire-old-backups",
@@ -93,12 +93,12 @@ The backup user needs only these actions on the backup prefix:
     {
       "Effect": "Allow",
       "Action": ["s3:PutObject", "s3:GetObject", "s3:DeleteObject"],
-      "Resource": "arn:aws:s3:::trustlend-backups/backups/*"
+      "Resource": "arn:aws:s3:::lendrix-backups/backups/*"
     },
     {
       "Effect": "Allow",
       "Action": "s3:ListBucket",
-      "Resource": "arn:aws:s3:::trustlend-backups"
+      "Resource": "arn:aws:s3:::lendrix-backups"
     }
   ]
 }
@@ -118,12 +118,12 @@ removes the static credentials from repository secrets entirely.
 aws s3 ls s3://$S3_BUCKET/backups/ --recursive
 
 # Download the one you want
-aws s3 cp s3://$S3_BUCKET/backups/2026/08/trustlend-20260828T000000Z.dump.enc .
+aws s3 cp s3://$S3_BUCKET/backups/2026/08/lendrix-20260828T000000Z.dump.enc .
 
 # Decrypt (prompts for the passphrase; must match the key used that night)
 BACKUP_ENCRYPTION_KEY='...' openssl enc -d -aes-256-cbc \
   -pbkdf2 -iter 600000 -md sha512 \
-  -in trustlend-20260828T000000Z.dump.enc \
+  -in lendrix-20260828T000000Z.dump.enc \
   -out restore.dump \
   -pass env:BACKUP_ENCRYPTION_KEY
 
@@ -137,8 +137,8 @@ pg_restore --list restore.dump | head
 restore at production until you have confirmed the contents.
 
 ```bash
-createdb trustlend_restore
-pg_restore --dbname="postgresql://.../trustlend_restore" \
+createdb lendrix_restore
+pg_restore --dbname="postgresql://.../lendrix_restore" \
   --no-owner --no-privileges --jobs=4 restore.dump
 ```
 

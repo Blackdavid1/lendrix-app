@@ -619,7 +619,7 @@ export function LenderForms({
   }, [successTx]);
 
   const lpTokenContractId =
-    process.env.NEXT_PUBLIC_TLEND_TOKEN_CONTRACT_ID?.trim() ?? "";
+    process.env.NEXT_PUBLIC_LENDRIX_TOKEN_CONTRACT_ID?.trim() ?? "";
   const canAddLpToken = walletProvider === "freighter" && Boolean(lpTokenContractId);
   const [addTokenStatus, setAddTokenStatus] = useState<string>("");
 
@@ -753,12 +753,12 @@ export function LenderForms({
       });
 
       const selectedPool = pools.find((p) => p.id === params.poolId);
-      const poolName = selectedPool ? selectedPool.name : "TrustLend Pool";
+      const poolName = selectedPool ? selectedPool.name : "Lendrix App Pool";
 
       const receiverId = await registerSep12Customer(endpoints.kycServer, jwt, {
-        first_name: "TrustLend",
+        first_name: "Lendrix App",
         last_name: poolName,
-        email: "escrow@trustlend.io",
+        email: "escrow@lendrix.io",
         type: "sep31-receiver",
       });
 
@@ -801,7 +801,7 @@ export function LenderForms({
 
       if (!apiRes.ok) {
         const errJson = await apiRes.json();
-        throw new Error(errJson.error ?? "Failed to register transaction on TrustLend.");
+        throw new Error(errJson.error ?? "Failed to register transaction on Lendrix App.");
       }
 
       setFiatInstructions({
@@ -1224,7 +1224,7 @@ export function LenderForms({
                     marginBottom: "0.75rem",
                   }}
                 >
-                  Your XLM will be sent directly to TrustLend&apos;s Stellar escrow
+                  Your XLM will be sent directly to Lendrix App&apos;s Stellar escrow
                   using your selected wallet connector. A real on-chain transaction
                   is required — no mock deposits.
                 </p>

@@ -25,6 +25,6 @@ VALUES
 	(
 		'platform_fee_bps', 1, true, 100,
 		'Initial value migrated from the hardcoded 1% platform fee (issue #324)',
-		'system@trustlend.org'
+		'system@lendrix.org'
 	)
 ON CONFLICT DO NOTHING;

@@ -14,7 +14,7 @@
 # =============================================================================
 $ErrorActionPreference = "Stop"
 $NETWORK = "testnet"
-$ADMIN_KEY = "trustlend-admin"
+$ADMIN_KEY = "lendrix-admin"
 $ADMIN_ADDRESS = (stellar keys address $ADMIN_KEY).Trim()
 
 Write-Host "Admin Address: $ADMIN_ADDRESS"

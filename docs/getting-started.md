@@ -1,6 +1,6 @@
-# Getting Started with TrustLend
+# Getting Started with Lendrix App
 
-Welcome, contributor! This guide walks you through setting up your local development environment for TrustLend — from installing the Soroban CLI and Node dependencies to running the full test suite.
+Welcome, contributor! This guide walks you through setting up your local development environment for Lendrix App — from installing the Soroban CLI and Node dependencies to running the full test suite.
 
 ---
 
@@ -76,17 +76,17 @@ stellar --version
 
 ### Fork First
 
-If you plan to contribute, [fork the repository](https://github.com/thisisouvik/trustlend-stellar/fork) on GitHub, then clone your fork:
+If you plan to contribute, [fork the repository](https://github.com/thisisouvik/lendrix-app/fork) on GitHub, then clone your fork:
 
 ```bash
-git clone https://github.com/<your-username>/trustlend-stellar.git
-cd trustlend-stellar
+git clone https://github.com/<your-username>/lendrix-app.git
+cd lendrix-app
 ```
 
 Add the original repo as an upstream remote so you can sync changes:
 
 ```bash
-git remote add upstream https://github.com/thisisouvik/trustlend-stellar.git
+git remote add upstream https://github.com/thisisouvik/lendrix-app.git
 ```
 
 ---
@@ -124,7 +124,7 @@ NEXT_PUBLIC_SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
 
 ### 3.3 Set Up the Database (Neon Postgres)
 
-TrustLend stores off-chain state in Postgres on [Neon](https://neon.tech) and
+Lendrix App stores off-chain state in Postgres on [Neon](https://neon.tech) and
 talks to it through [Drizzle ORM](https://orm.drizzle.team). The schema lives in
 `lib/db/schema.ts`; SQL migrations are generated from it into `drizzle/`.
 
@@ -177,7 +177,7 @@ The contracts live in the `contracts/` directory — a Cargo workspace with 16 c
 | `multisig_admin` | `contracts/multisig_admin/` | N-of-M admin approvals |
 | `governance` | `contracts/governance/` | Proposals & voting on protocol parameters |
 | `referral_rewards` | `contracts/referral_rewards/` | Referral bonuses on first funded loan |
-| `tlend_token` / `tlend_vesting` / `tlend_airdrop` | `contracts/tlend_*/` | Protocol token, vesting, Merkle airdrop |
+| `lendrix_token` / `lendrix_vesting` / `lendrix_airdrop` | `contracts/lendrix_*/` | Protocol token, vesting, Merkle airdrop |
 | `treasury` | `contracts/treasury/` | Fee collection & distribution |
 | `auto_compound_vault` | `contracts/auto_compound_vault/` | Auto-compounding yield vault |
 | `liquidation_auction` | `contracts/liquidation_auction/` | Dutch auction for liquidated collateral |
@@ -226,7 +226,7 @@ writes the resulting contract IDs straight into your `.env.local`:
 npm run deploy:testnet
 ```
 
-That is all you need. The CLI creates the `trustlend-admin` identity and funds
+That is all you need. The CLI creates the `lendrix-admin` identity and funds
 it from friendbot on your behalf if it does not exist yet — no manual keypair
 setup first.
 
@@ -244,7 +244,7 @@ Useful flags (`npm run deploy:testnet -- --help` lists them all):
 | `--resume` | Reuse IDs from the last run instead of redeploying |
 | `--skip-build` | Reuse the WASM already in `contracts/target` |
 | `--out-env .env.staging` | Write to a different env file |
-| `--admin-key <name>` | Stellar CLI identity to deploy from (default `trustlend-admin`) |
+| `--admin-key <name>` | Stellar CLI identity to deploy from (default `lendrix-admin`) |
 | `--dry-run` | Print every command without running it |
 
 If a deploy fails partway through, re-run with `--resume`: contract IDs are
@@ -255,7 +255,7 @@ After deploying, give the server the admin signer so it can activate loans and
 record repayments on-chain (see [onchain-lifecycle.md](onchain-lifecycle.md)):
 
 ```bash
-stellar keys show trustlend-admin     # → ADMIN_SECRET_KEY in .env.local / Vercel
+stellar keys show lendrix-admin     # → ADMIN_SECRET_KEY in .env.local / Vercel
 npx tsx scripts/verify-onchain-lifecycle.ts   # optional: walk the full lifecycle on testnet
 ```
 
@@ -264,7 +264,7 @@ To deploy a single contract by hand instead:
 ```bash
 stellar contract deploy \
   --wasm target/wasm32v1-none/release/lending.wasm \
-  --source trustlend-admin \
+  --source lendrix-admin \
   --network testnet
 ```
 
@@ -277,7 +277,7 @@ stellar contract deploy \
 
 ## 5. Running the Test Suite
 
-TrustLend has two separate test suites: **frontend** (TypeScript / vitest) and **smart contracts** (Rust / `cargo test`).
+Lendrix App has two separate test suites: **frontend** (TypeScript / vitest) and **smart contracts** (Rust / `cargo test`).
 
 ### 5.1 Frontend Tests (vitest)
 
@@ -397,7 +397,7 @@ Valid scopes include: `lending`, `escrow`, `governance`, `frontend`, `ci`, `db`,
    ```bash
    git push -u origin feat/lending-add-feature
    ```
-   Then open a PR at `https://github.com/thisisouvik/trustlend-stellar/pulls`
+   Then open a PR at `https://github.com/thisisouvik/lendrix-app/pulls`
 
 4. Ensure CI passes. Respond to reviewer feedback.
 

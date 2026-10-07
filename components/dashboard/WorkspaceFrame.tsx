@@ -140,9 +140,9 @@ export function WorkspaceFrame({
   const sidebar = (
     <div className="flex h-full flex-col">
       <div className="flex items-center justify-between px-5 pb-4 pt-5">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="TrustLend home">
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Lendrix App home">
           <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8 rounded-lg object-cover" />
-          <span className="font-display text-lg font-bold tracking-tight text-fg">TrustLend</span>
+          <span className="font-display text-lg font-bold tracking-tight text-fg">Lendrix App</span>
         </Link>
         <button
           type="button"

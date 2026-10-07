@@ -4,8 +4,8 @@ import { ReferralCodeStash } from "@/components/auth/ReferralCodeStash";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sign in — TrustLend",
-  description: "Sign in or create your TrustLend account as a borrower or lender.",
+  title: "Sign in — Lendrix App",
+  description: "Sign in or create your Lendrix App account as a borrower or lender.",
 };
 
 export default function AuthPage() {

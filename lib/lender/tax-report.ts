@@ -357,9 +357,9 @@ export function toCsv(rows: TaxReportRow[], options: ToCsvOptions = {}): string 
   return (bom ? "﻿" : "") + lines.join("\r\n") + "\r\n";
 }
 
-/** `trustlend-tax-report-2026.csv` — stable, sortable, obvious in a downloads folder. */
+/** `lendrix-tax-report-2026.csv` — stable, sortable, obvious in a downloads folder. */
 export function taxReportFilename(year: number | null, extension = "csv"): string {
-  return `trustlend-tax-report-${year ?? "all"}.${extension}`;
+  return `lendrix-tax-report-${year ?? "all"}.${extension}`;
 }
 
 /**

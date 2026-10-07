@@ -123,25 +123,25 @@ describe("buildReferralLink", () => {
   const code = generateReferralCode();
 
   it("builds an absolute invite URL", () => {
-    expect(buildReferralLink(code, "https://trustlend.app")).toBe(
-      `https://trustlend.app/auth?ref=${code}`,
+    expect(buildReferralLink(code, "https://lendrix.app")).toBe(
+      `https://lendrix.app/auth?ref=${code}`,
     );
   });
 
   it("tolerates a trailing slash on the base URL", () => {
-    expect(buildReferralLink(code, "https://trustlend.app/")).toBe(
-      `https://trustlend.app/auth?ref=${code}`,
+    expect(buildReferralLink(code, "https://lendrix.app/")).toBe(
+      `https://lendrix.app/auth?ref=${code}`,
     );
   });
 
   it("normalizes the code before embedding it", () => {
-    expect(buildReferralLink(code.toLowerCase(), "https://trustlend.app")).toBe(
-      `https://trustlend.app/auth?ref=${code}`,
+    expect(buildReferralLink(code.toLowerCase(), "https://lendrix.app")).toBe(
+      `https://lendrix.app/auth?ref=${code}`,
     );
   });
 
   it("throws on an invalid code rather than emitting a broken link", () => {
-    expect(() => buildReferralLink("nope", "https://trustlend.app")).toThrow();
+    expect(() => buildReferralLink("nope", "https://lendrix.app")).toThrow();
   });
 });
 
@@ -149,7 +149,7 @@ describe("extractReferralCode", () => {
   const code = generateReferralCode();
 
   it("reads the code from a full URL", () => {
-    expect(extractReferralCode(`https://trustlend.app/auth?ref=${code}`)).toBe(code);
+    expect(extractReferralCode(`https://lendrix.app/auth?ref=${code}`)).toBe(code);
   });
 
   it("reads the code from a bare query string, with or without the '?'", () => {
@@ -166,14 +166,14 @@ describe("extractReferralCode", () => {
   });
 
   it("returns null when there is no usable code", () => {
-    expect(extractReferralCode("https://trustlend.app/auth")).toBeNull();
+    expect(extractReferralCode("https://lendrix.app/auth")).toBeNull();
     expect(extractReferralCode("?ref=garbage")).toBeNull();
     expect(extractReferralCode("?ref=")).toBeNull();
     expect(extractReferralCode("")).toBeNull();
   });
 
   it("round-trips with buildReferralLink", () => {
-    const link = buildReferralLink(code, "https://trustlend.app");
+    const link = buildReferralLink(code, "https://lendrix.app");
     expect(extractReferralCode(link)).toBe(code);
   });
 });

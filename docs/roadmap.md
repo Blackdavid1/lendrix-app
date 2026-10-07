@@ -1,4 +1,4 @@
-# TrustLend Roadmap
+# Lendrix App Roadmap
 
 This page tracks where the project is and what comes next. It is a living
 document — priorities shift with community feedback, and every item is open for
@@ -8,7 +8,7 @@ contribution. Comment on or open an issue if you want to pick something up.
 
 - Soroban contracts for lending, borrower reputation, escrow, default
   management, pooled lending, multisig admin, governance, referral rewards and
-  the TLEND token suite, deployed to Stellar testnet with `npm run deploy:testnet`.
+  the LENDRIX token suite, deployed to Stellar testnet with `npm run deploy:testnet`.
 - Wallet-native authentication (Sign-In with Stellar / SEP-10) — no passwords,
   no third-party identity provider.
 - Borrower, lender and admin dashboards (Next.js 16) with a token-based design

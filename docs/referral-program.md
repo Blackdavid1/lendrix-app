@@ -7,7 +7,7 @@
 ## How it works
 
 ```
-  Alice                     TrustLend                      Chain
+  Alice                     Lendrix App                      Chain
     │                           │                            │
     │ 1. copies her link        │                            │
     │    /auth?ref=TL7F3KQ2     │                            │

@@ -80,10 +80,10 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 TIMESTAMP="$(date -u +%Y%m%dT%H%M%SZ)"
-DUMP_FILE="$WORKDIR/trustlend-${TIMESTAMP}.dump"
+DUMP_FILE="$WORKDIR/lendrix-${TIMESTAMP}.dump"
 ENCRYPTED_FILE="${DUMP_FILE}.enc"
 # Date-partitioned so S3 lifecycle rules and humans can both navigate it.
-S3_KEY="${BACKUP_S3_PREFIX}/$(date -u +%Y/%m)/trustlend-${TIMESTAMP}.dump.enc"
+S3_KEY="${BACKUP_S3_PREFIX}/$(date -u +%Y/%m)/lendrix-${TIMESTAMP}.dump.enc"
 S3_URI="s3://${S3_BUCKET}/${S3_KEY}"
 
 # ── 1. Dump ───────────────────────────────────────────────────────────────────

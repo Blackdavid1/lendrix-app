@@ -19,7 +19,7 @@
  */
 export const REFERRAL_ALPHABET = "23456789ABCDEFGHJKMNPQRSTVWXYZ";
 
-/** Every generated code carries this prefix so it is recognisably TrustLend. */
+/** Every generated code carries this prefix so it is recognisably Lendrix App. */
 export const REFERRAL_PREFIX = "TL";
 
 /** Number of random characters after the prefix. */

@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="public/logo.png" alt="TrustLend logo" width="120" />
+  <img src="public/logo.png" alt="Lendrix App logo" width="120" />
 </p>
 
-<h1 align="center">TrustLend</h1>
+<h1 align="center">Lendrix App</h1>
 
 <p align="center">
   Reputation-based micro-lending on Stellar.<br />
@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/thisisouvik/trustlend-stellar/actions/workflows/ci.yml"><img src="https://github.com/thisisouvik/trustlend-stellar/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://github.com/thisisouvik/lendrix-app/actions/workflows/ci.yml"><img src="https://github.com/thisisouvik/lendrix-app/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" /></a>
   <img src="https://img.shields.io/badge/Next.js-16-000?logo=next.js" alt="Next.js 16" />
   <img src="https://img.shields.io/badge/Soroban-Rust-orange?logo=rust" alt="Soroban / Rust" />
@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <a href="https://trustlendborrow.vercel.app/"><strong>Live demo</strong></a> ·
+  <a href="https://lendrixborrow.vercel.app/"><strong>Live demo</strong></a> ·
   <a href="https://youtu.be/V-SQxunQLow">Video walkthrough</a> ·
   <a href="docs/getting-started.md">Getting started</a> ·
   <a href="docs/roadmap.md">Roadmap</a> ·
@@ -27,14 +27,14 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/landing-dark.png" alt="TrustLend landing page" width="100%" />
+  <img src="docs/screenshots/landing-dark.png" alt="Lendrix App landing page" width="100%" />
 </p>
 
 ---
 
-## What is TrustLend?
+## What is Lendrix App?
 
-Millions of people in emerging markets are locked out of credit because they have no formal credit history and nothing to pledge as collateral. TrustLend replaces collateral with **behaviour**: every on-time repayment raises a borrower's on-chain trust score, which in turn unlocks larger loans and better rates.
+Millions of people in emerging markets are locked out of credit because they have no formal credit history and nothing to pledge as collateral. Lendrix App replaces collateral with **behaviour**: every on-time repayment raises a borrower's on-chain trust score, which in turn unlocks larger loans and better rates.
 
 - **Borrowers** sign in with a Stellar wallet, complete KYC and request working capital. Eligibility and pricing are computed from their trust score.
 - **Lenders** fund individual requests in a marketplace or deposit into pooled lending for passive yield, with every position traceable on-chain.
@@ -131,8 +131,8 @@ See [docs/](docs/) for detailed design notes on each subsystem.
 ## Quick start
 
 ```bash
-git clone https://github.com/thisisouvik/trustlend-stellar.git
-cd trustlend-stellar
+git clone https://github.com/thisisouvik/lendrix-app.git
+cd lendrix-app
 npm install
 cp .env.example .env.local   # fill in DATABASE_URL, SESSION_SECRET, SIWS_SERVER_SECRET
 npm run db:migrate           # apply the Drizzle migrations to your Neon database
@@ -171,7 +171,7 @@ All contracts live in the [`contracts/`](contracts/) Cargo workspace and are tes
 | `pooled_lending` | Pool deposits auto-matched to borrower requests | pool ids + totals mirrored on every deposit/withdrawal |
 | `multisig_admin` | N-of-M approval for privileged actions | ✅ |
 | `governance` | Proposals and voting on protocol parameters | ✅ |
-| `tlend_token` · `tlend_vesting` · `tlend_airdrop` | Protocol token, vesting schedules, Merkle airdrop | ✅ |
+| `lendrix_token` · `lendrix_vesting` · `lendrix_airdrop` | Protocol token, vesting schedules, Merkle airdrop | ✅ |
 | `referral_rewards` | Pays referral bonuses on first funded loan | linked to `lending` at deploy; typed client |
 | `borrower_loyalty` | Loyalty rewards for repeat borrowers | linked to `lending` at deploy; typed client |
 | `treasury` | Fee collection and distribution | deployed + typed client |
@@ -220,10 +220,10 @@ Please do **not** open public issues for vulnerabilities. Follow the disclosure 
 
 ## License
 
-[MIT](LICENSE) © TrustLend contributors
+[MIT](LICENSE) © Lendrix App contributors
 
 <p align="center">
-  <a href="https://github.com/thisisouvik/trustlend-stellar/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=thisisouvik/trustlend-stellar" alt="Contributors" />
+  <a href="https://github.com/thisisouvik/lendrix-app/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=thisisouvik/lendrix-app" alt="Contributors" />
   </a>
 </p>

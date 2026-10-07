@@ -192,7 +192,7 @@ export function createBinanceSource(options: {
 /**
  * On-chain price from the Stellar DEX orderbook, via Horizon.
  *
- * This is the only source that is native to the chain TrustLend runs on, so
+ * This is the only source that is native to the chain Lendrix App runs on, so
  * it keeps the feed working even if every centralised API is unreachable.
  * Uses the orderbook mid-price against USDC.
  */

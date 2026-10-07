@@ -97,7 +97,7 @@ export const borrowingSteps: GuideStep[] = [
     step: "02",
     title: "Build a trust score",
     description:
-      "TrustLend prices your loan on reputation, not just collateral. Your trust score runs from 0 to 750 and directly raises the LTV you are allowed to reach before liquidation.",
+      "Lendrix App prices your loan on reputation, not just collateral. Your trust score runs from 0 to 750 and directly raises the LTV you are allowed to reach before liquidation.",
     details: [
       "New accounts start from a baseline score and earn more through verified activity and on-time repayment.",
       "A higher score raises your personal liquidation threshold — see 'How your liquidation threshold is set' below.",
@@ -307,7 +307,7 @@ export const borrowingFaq: FaqEntry[] = [
     category: "Costs & Rates",
     question: "Is the rate I see APR or APY?",
     answer:
-      "APR. TrustLend loans accrue simple interest, so the rate you are quoted is not compounded. A 12% APR on 100 XLM borrowed for a full year costs 12 XLM in interest.",
+      "APR. Lendrix App loans accrue simple interest, so the rate you are quoted is not compounded. A 12% APR on 100 XLM borrowed for a full year costs 12 XLM in interest.",
   },
   {
     category: "Costs & Rates",

@@ -1,6 +1,6 @@
-# Contributing to TrustLend
+# Contributing to Lendrix App
 
-Thanks for your interest in TrustLend! This guide covers how to set up a
+Thanks for your interest in Lendrix App! This guide covers how to set up a
 development environment, the conventions we follow, and how to get a change
 merged. For the full local-setup walkthrough (Rust/Soroban toolchain, database,
 tests) see [docs/getting-started.md](docs/getting-started.md).
@@ -8,7 +8,7 @@ tests) see [docs/getting-started.md](docs/getting-started.md).
 ## Ways to contribute
 
 - **Report bugs** or **request features** through
-  [GitHub Issues](https://github.com/thisisouvik/trustlend-stellar/issues) using
+  [GitHub Issues](https://github.com/thisisouvik/lendrix-app/issues) using
   the provided templates. For anything security-related, follow
   [SECURITY.md](SECURITY.md) instead of opening a public issue.
 - **Improve documentation** — everything under [`docs/`](docs/) and the README.
@@ -23,9 +23,9 @@ one) so we can agree on the approach first.
 ## Development setup
 
 ```bash
-git clone https://github.com/<your-username>/trustlend-stellar.git
-cd trustlend-stellar
-git remote add upstream https://github.com/thisisouvik/trustlend-stellar.git
+git clone https://github.com/<your-username>/lendrix-app.git
+cd lendrix-app
+git remote add upstream https://github.com/thisisouvik/lendrix-app.git
 
 npm install                      # also installs the Husky commit hook
 cp .env.example .env.local       # set DATABASE_URL, SESSION_SECRET, SIWS_SERVER_SECRET

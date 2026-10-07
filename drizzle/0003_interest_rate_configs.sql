@@ -37,13 +37,13 @@ VALUES
 		'[{"minAmount":1000.000001,"aprBps":1200},{"minAmount":2000.000001,"aprBps":1000}]'::jsonb,
 		'[{"minScore":0,"multiplierBps":10000},{"minScore":500,"multiplierBps":10000},{"minScore":750,"multiplierBps":10000}]'::jsonb,
 		'Initial schedule migrated from hardcoded APR ladder (issue #321)',
-		'system@trustlend.org'
+		'system@lendrix.org'
 	),
 	(
 		'floating', 1, true, 500, 100, 5000,
 		'[{"minAmount":1000.000001,"aprBps":450},{"minAmount":2000.000001,"aprBps":400}]'::jsonb,
 		'[{"minScore":0,"multiplierBps":10000},{"minScore":500,"multiplierBps":10000},{"minScore":750,"multiplierBps":10000}]'::jsonb,
 		'Initial schedule migrated from hardcoded APR ladder (issue #321)',
-		'system@trustlend.org'
+		'system@lendrix.org'
 	)
 ON CONFLICT DO NOTHING;

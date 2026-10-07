@@ -61,7 +61,7 @@ export function TrustBadgesSection({ badges }: TrustBadgesSectionProps) {
         </motion.ul>
 
         <motion.p {...revealOnScroll} className="mt-8 text-center text-xs text-fg-subtle">
-          TrustLend runs on Stellar testnet today. Contracts are open source and under continuous automated audit;
+          Lendrix App runs on Stellar testnet today. Contracts are open source and under continuous automated audit;
           no third-party certification is claimed.
         </motion.p>
       </div>

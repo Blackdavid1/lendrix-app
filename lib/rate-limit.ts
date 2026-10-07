@@ -164,7 +164,7 @@ async function getUpstashRateLimit(
     limiter = new Ratelimit({
       redis,
       limiter: Ratelimit.fixedWindow(policy.limit, policy.window),
-      prefix: `trustlend:ratelimit:${bucket}`,
+      prefix: `lendrix:ratelimit:${bucket}`,
       analytics: false,
     });
     ratelimiters.set(cacheKey, limiter);

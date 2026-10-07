@@ -14,7 +14,7 @@ import type {
 } from "@/types/landing";
 
 /** Canonical repository, used for every security/source link below. */
-const REPO_URL = "https://github.com/thisisouvik/trustlend-stellar";
+const REPO_URL = "https://github.com/thisisouvik/lendrix-app";
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "#home" },
@@ -31,7 +31,7 @@ export const heroContent: HeroContent = {
   titleMain: "Credit built on behavior,",
   titleAccent: "not collateral.",
   description:
-    "TrustLend connects borrowers and lenders through an on-chain trust score. Sign in with your Stellar wallet, build reputation with every repayment, and unlock fair capital without paperwork.",
+    "Lendrix App connects borrowers and lenders through an on-chain trust score. Sign in with your Stellar wallet, build reputation with every repayment, and unlock fair capital without paperwork.",
 };
 
 export const metrics: MetricItem[] = [
@@ -44,7 +44,7 @@ export const metrics: MetricItem[] = [
 export const highlightContent: HighlightContent = {
   title: "Anytime, Anywhere",
   description:
-    "TrustLend helps users build reputation from real behavior and unlock fair capital without paperwork-heavy approval cycles.",
+    "Lendrix App helps users build reputation from real behavior and unlock fair capital without paperwork-heavy approval cycles.",
   callout:
     "No paid tasks. No synthetic score farming. Just real financial trust that compounds with every healthy action.",
 };
@@ -119,14 +119,14 @@ export const p2pSteps: P2PStep[] = [
 
 export const faqItems: FaqItem[] = [
   {
-    question: "What is TrustLend?",
+    question: "What is Lendrix App?",
     answer:
-      "TrustLend is a reputation-based micro-lending platform where creditworthiness is driven by real financial behavior, not collateral or paid tasks.",
+      "Lendrix App is a reputation-based micro-lending platform where creditworthiness is driven by real financial behavior, not collateral or paid tasks.",
   },
   {
     question: "Do I need to create an account with email and password?",
     answer:
-      "No. TrustLend uses Sign-In with Stellar (SEP-10): you prove ownership of a wallet by signing a challenge, and that wallet is your account. Freighter, xBull, Albedo and WalletConnect mobile wallets are supported.",
+      "No. Lendrix App uses Sign-In with Stellar (SEP-10): you prove ownership of a wallet by signing a challenge, and that wallet is your account. Freighter, xBull, Albedo and WalletConnect mobile wallets are supported.",
   },
   {
     question: "How is reputation calculated?",
@@ -134,9 +134,9 @@ export const faqItems: FaqItem[] = [
       "The score primarily reflects repayment history, lending activity, transaction consistency, and verified external financial signals.",
   },
   {
-    question: "How does TrustLend differ from typical DAO lending platforms?",
+    question: "How does Lendrix App differ from typical DAO lending platforms?",
     answer:
-      "Most DAO platforms rely on collateral-heavy crypto-native flows. TrustLend is built for real-world freelancers and unbanked users using behavior-based trust.",
+      "Most DAO platforms rely on collateral-heavy crypto-native flows. Lendrix App is built for real-world freelancers and unbanked users using behavior-based trust.",
   },
   {
     question: "Can lenders monitor risk transparently?",
@@ -160,7 +160,7 @@ export const howItWorksSteps: HowItWorksStep[] = [
     caption: "Connect",
     title: "Sign in with your Stellar wallet",
     description:
-      "Authenticate by signing a SEP-10 challenge with Freighter, xBull, Albedo, or any mobile wallet over WalletConnect. No password, and TrustLend never holds your keys.",
+      "Authenticate by signing a SEP-10 challenge with Freighter, xBull, Albedo, or any mobile wallet over WalletConnect. No password, and Lendrix App never holds your keys.",
     visual: "wallet",
   },
   {

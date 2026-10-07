@@ -66,7 +66,7 @@ const STEP_LABELS: Record<Step, string> = {
   signing: "3/5 -- Waiting for signature...",
   submitting: "4/5 -- Submitting to Stellar network...",
   approving: "4/5 -- Approve the loan on the LendingContract...",
-  recording: "5/5 -- Recording on TrustLend...",
+  recording: "5/5 -- Recording on Lendrix App...",
   done: "Success!",
   error: "Failed",
 };
@@ -208,7 +208,7 @@ export function DirectFundForm({ loan, onClose }: DirectFundFormProps) {
         approveTxHash = approval.txHash;
       }
 
-      // Step 5 -- Record on TrustLend
+      // Step 5 -- Record on Lendrix App
       setStep("recording");
       const apiRes = await fetch("/api/loans/fund", {
         method: "POST",
@@ -549,7 +549,7 @@ export function DirectFundForm({ loan, onClose }: DirectFundFormProps) {
             lineHeight: 1.5,
           }}
         >
-          ℹ️ Your XLM will be sent directly to the borrower. TrustLend records
+          ℹ️ Your XLM will be sent directly to the borrower. Lendrix App records
           the transaction hash to verify your claim to the repayment.
         </p>
       </div>

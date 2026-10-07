@@ -1,4 +1,4 @@
-//! Kani formal verification harnesses for the TrustLend lending contract.
+//! Kani formal verification harnesses for the Lendrix App lending contract.
 //!
 //! # Why Formal Verification?
 //!

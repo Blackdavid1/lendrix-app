@@ -76,7 +76,7 @@ function runBackup(env: Record<string, string>, cwd: string) {
 const VALID_ENV = {
   DATABASE_URL: "postgres://user:pw@localhost:5432/db",
   BACKUP_ENCRYPTION_KEY: "correct-horse-battery-staple",
-  S3_BUCKET: "trustlend-backups-test",
+  S3_BUCKET: "lendrix-backups-test",
 };
 
 beforeAll(() => {

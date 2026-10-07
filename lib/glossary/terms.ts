@@ -1,5 +1,5 @@
 /**
- * Glossary of financial acronyms surfaced in the TrustLend UI (Issue #264).
+ * Glossary of financial acronyms surfaced in the Lendrix App UI (Issue #264).
  *
  * New users land on the dashboard and immediately meet acronyms like APR, LTV
  * and HF with no explanation. This module is the single source of truth for
@@ -36,13 +36,13 @@ export const GLOSSARY: Record<GlossaryTermKey, GlossaryTerm> = {
     label: "APR",
     full: "Annual Percentage Rate",
     description:
-      "The yearly interest rate on a loan, before compounding. On TrustLend interest is simple, so a 12% APR on 100 XLM borrowed for a full year costs 12 XLM in interest.",
+      "The yearly interest rate on a loan, before compounding. On Lendrix App interest is simple, so a 12% APR on 100 XLM borrowed for a full year costs 12 XLM in interest.",
   },
   APY: {
     label: "APY",
     full: "Annual Percentage Yield",
     description:
-      "The yearly return once earned interest is reinvested and starts earning interest itself. APY is higher than APR whenever interest compounds; TrustLend loans pay simple interest, so returns are quoted as APR.",
+      "The yearly return once earned interest is reinvested and starts earning interest itself. APY is higher than APR whenever interest compounds; Lendrix App loans pay simple interest, so returns are quoted as APR.",
   },
   LTV: {
     label: "LTV",
@@ -72,7 +72,7 @@ export const GLOSSARY: Record<GlossaryTermKey, GlossaryTerm> = {
     label: "Liquidation Threshold",
     full: "Liquidation Threshold",
     description:
-      "The LTV at which your collateral can be sold to repay your debt. TrustLend raises this threshold for borrowers with a strong trust score.",
+      "The LTV at which your collateral can be sold to repay your debt. Lendrix App raises this threshold for borrowers with a strong trust score.",
   },
   COLLATERAL_FACTOR: {
     label: "Collateral Factor",

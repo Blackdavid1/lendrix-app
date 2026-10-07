@@ -319,7 +319,7 @@ describe("rate-config — getActiveRateConfig", () => {
         amountTiers: [{ minAmount: 500, aprBps: 1600 }],
         reputationTiers: [{ minScore: 600, multiplierBps: 9500 }],
         notes: "Market repricing",
-        updatedByEmail: "admin@trustlend.org",
+        updatedByEmail: "admin@lendrix.app",
         updatedAt: new Date("2026-09-01T00:00:00.000Z"),
       },
     ]);

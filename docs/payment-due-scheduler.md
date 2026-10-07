@@ -1,6 +1,6 @@
 # Payment-Due Scheduler & Notifications
 
-TrustLend checks for loans whose payment deadline falls within the next
+Lendrix App checks for loans whose payment deadline falls within the next
 **48 hours** and dispatches a webhook (and, when configured, an email) for each
 of them.
 
@@ -23,10 +23,10 @@ of them.
 | `CRON_SECRET` | Secret token used to authenticate scheduler requests (`Authorization: Bearer <value>`) |
 | `DATABASE_URL` | Neon Postgres connection string |
 | `RESEND_API_KEY` | Optional Resend API key for borrower email notifications |
-| `RESEND_FROM_EMAIL` | Verified sender address used for TrustLend emails |
+| `RESEND_FROM_EMAIL` | Verified sender address used for Lendrix App emails |
 | `RESEND_REPLY_TO_EMAIL` | Optional reply-to address for support responses |
 
-When Resend is configured, TrustLend sends borrower emails for loan approval,
+When Resend is configured, Lendrix App sends borrower emails for loan approval,
 loan funding and overdue payments. Email failures are logged but do not roll
 back successful loan state changes.
 

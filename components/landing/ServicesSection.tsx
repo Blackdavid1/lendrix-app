@@ -58,7 +58,7 @@ export function ServicesSection({ metrics, content }: ServicesSectionProps) {
         </motion.dl>
 
         <div className="py-20 md:py-24">
-          <SectionHeading eyebrow="Why TrustLend" title={content.title} description={content.description} />
+          <SectionHeading eyebrow="Why Lendrix App" title={content.title} description={content.description} />
 
           <motion.div
             variants={stagger}

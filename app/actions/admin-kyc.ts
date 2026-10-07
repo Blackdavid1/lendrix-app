@@ -60,13 +60,13 @@ export async function verifyKYCDocument(
           set: { scoreTotal: clamped, updatedAt: sql`now()` },
         });
 
-      console.log(`[TrustLend] Reputation snapshot seeded for ${userId}: score=${clamped}`);
+      console.log(`[Lendrix App] Reputation snapshot seeded for ${userId}: score=${clamped}`);
     }
 
-    console.log(`[TrustLend] KYC ${approved ? "approved" : "rejected"} for user ${userId}`);
+    console.log(`[Lendrix App] KYC ${approved ? "approved" : "rejected"} for user ${userId}`);
     return { success: true };
   } catch (error) {
-    console.error("[TrustLend] KYC verification failed:", error);
+    console.error("[Lendrix App] KYC verification failed:", error);
     return {
       success: false,
       error: error instanceof Error ? error.message : "Verification failed",
@@ -117,7 +117,7 @@ export async function getPendingKYCDocuments(): Promise<PendingKycDocument[] | n
       submitted_at: doc.kycSubmittedAt ? doc.kycSubmittedAt.toISOString() : "",
     }));
   } catch (error) {
-    console.error("[TrustLend] Failed to fetch KYC documents:", error);
+    console.error("[Lendrix App] Failed to fetch KYC documents:", error);
     return null;
   }
 }

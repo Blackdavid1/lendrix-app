@@ -15,9 +15,9 @@ import {
 } from "@/lib/content/borrowing-guide";
 
 export const metadata: Metadata = {
-  title: "Borrowing Guide & FAQ | TrustLend",
+  title: "Borrowing Guide & FAQ | Lendrix App",
   description:
-    "How collateralized borrowing works on TrustLend: the step-by-step process, how liquidation is triggered, and answers to the questions borrowers ask most.",
+    "How collateralized borrowing works on Lendrix App: the step-by-step process, how liquidation is triggered, and answers to the questions borrowers ask most.",
 };
 
 /**
@@ -39,9 +39,9 @@ export default function BorrowingGuidePage() {
             <span>Borrowing Guide</span>
           </nav>
           <p className="docs-eyebrow">User Guide</p>
-          <h1 className="docs-title">How borrowing works on TrustLend</h1>
+          <h1 className="docs-title">How borrowing works on Lendrix App</h1>
           <p className="docs-lede">
-            TrustLend lets you borrow against collateral you lock up front. This guide
+            Lendrix App lets you borrow against collateral you lock up front. This guide
             walks through the whole process, explains exactly how liquidation is
             triggered, and answers the questions borrowers ask most.
           </p>
@@ -110,7 +110,7 @@ export default function BorrowingGuidePage() {
           <h2 id="liquidation-heading" className="docs-h2">Liquidation: how it works</h2>
           <p className="docs-intro">
             Liquidation is the single biggest risk of collateralized borrowing. This
-            is exactly how it is triggered on TrustLend.
+            is exactly how it is triggered on Lendrix App.
           </p>
 
           <div className="docs-facts">

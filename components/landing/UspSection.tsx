@@ -17,7 +17,7 @@ export function UspSection({ items }: UspSectionProps) {
         <SectionHeading
           eyebrow="Why it works"
           title="Built for people the credit system left out"
-          description="Freelancers, gig workers and small traders have real financial histories. TrustLend turns that history into credit."
+          description="Freelancers, gig workers and small traders have real financial histories. Lendrix App turns that history into credit."
         />
 
         <motion.ul

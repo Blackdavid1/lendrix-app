@@ -63,7 +63,7 @@ export function TaxReportExportButton({ years, defaultYear }: TaxReportExportBut
       const link = document.createElement("a");
 
       link.href = url;
-      link.download = `trustlend-tax-report-${year}.csv`;
+      link.download = `lendrix-tax-report-${year}.csv`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

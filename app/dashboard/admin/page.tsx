@@ -130,7 +130,7 @@ export default async function AdminDashboardPage() {
     <WorkspaceFrame
       roleLabel="Trade Vault Admin"
       heading="Control Panel"
-      description="Monitor platform health, credit activity, and security posture across TrustLend operations."
+      description="Monitor platform health, credit activity, and security posture across Lendrix App operations."
       email={user.email ?? null}
       userName={String(user.fullName ?? "Admin")}
       metrics={presentAdminMetrics(metrics)}

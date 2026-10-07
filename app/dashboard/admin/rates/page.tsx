@@ -7,7 +7,7 @@ import { getActiveRateConfigs, getRateConfigHistory } from "@/lib/loans/rate-con
 import { AdminInterestRatesDashboard } from "@/components/dashboard/AdminInterestRatesDashboard";
 
 export const metadata = {
-  title: "Interest Rates — TrustLend Admin",
+  title: "Interest Rates — Lendrix App Admin",
   description:
     "Tune the APR schedules used to price new loan applications: base rates, principal tiers, and trust score multipliers.",
 };
@@ -44,7 +44,7 @@ export default async function AdminInterestRatesPage() {
         initialActive={configs}
         initialHistory={history}
         usingFallbackDefaults={usedFallback}
-        adminEmail={user.email || "admin@trustlend.org"}
+        adminEmail={user.email || "admin@lendrix.app"}
       />
     </WorkspaceFrame>
   );

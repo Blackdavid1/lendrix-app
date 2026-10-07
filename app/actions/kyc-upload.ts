@@ -72,11 +72,11 @@ export async function uploadKYCDocument(formData: FormData): Promise<{
       })
       .where(eq(profiles.id, user.id));
 
-    console.log(`[TrustLend] KYC document uploaded for user ${user.id}: ${blob.pathname}`);
+    console.log(`[Lendrix App] KYC document uploaded for user ${user.id}: ${blob.pathname}`);
 
     return { success: true, path: blob.pathname };
   } catch (error) {
-    console.error("[TrustLend] KYC upload failed:", error);
+    console.error("[Lendrix App] KYC upload failed:", error);
     return {
       success: false,
       error: error instanceof Error ? error.message : "Upload failed",

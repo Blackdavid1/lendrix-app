@@ -32,7 +32,7 @@
 
 ## 1. Overview
 
-TrustLend uses a **dual interest-rate model** that borrowers can choose between:
+Lendrix App uses a **dual interest-rate model** that borrowers can choose between:
 
 | Model | Behaviour | Best For |
 |---|---|---|

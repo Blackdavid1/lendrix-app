@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     if (rateLimit) return rateLimit;
 
     const { user } = await requireTradeVaultAdmin();
-    const adminEmail = user.email || "admin@trustlend.org";
+    const adminEmail = user.email || "admin@lendrix.app";
 
     const body = await request.json();
     const { category, targetId, updates, reason, txHash } = body;

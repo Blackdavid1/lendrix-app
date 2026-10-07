@@ -690,7 +690,7 @@ export function BorrowerForms({
         setWalletAddress(wallet.address);
         setWalletProvider(wallet.provider);
       } catch (err) {
-        console.warn("[TrustLend] Wallet connection skipped or cancelled:", err);
+        console.warn("[Lendrix App] Wallet connection skipped or cancelled:", err);
       }
     },
     []
@@ -716,7 +716,7 @@ export function BorrowerForms({
         setWalletProvider(wallet.provider);
       } catch (walletErr) {
         console.warn(
-          "[TrustLend] Falling back to stored address or prompt:",
+          "[Lendrix App] Falling back to stored address or prompt:",
           walletErr
         );
       }
@@ -813,7 +813,7 @@ export function BorrowerForms({
             });
           } catch (sorobanErr) {
             console.warn(
-              "[TrustLend] Soroban sync warning:",
+              "[Lendrix App] Soroban sync warning:",
               (sorobanErr as Error).message
             );
           }

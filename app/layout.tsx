@@ -24,11 +24,11 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: "TrustLend — Reputation-Based Micro-Lending for Everyone",
+  title: "Lendrix App — Reputation-Based Micro-Lending for Everyone",
   description:
-    "TrustLend is a decentralized micro-lending marketplace that empowers unbanked gig workers and freelancers in emerging markets to access credit based on real financial behavior — not collateral or credit history.",
+    "Lendrix App is a decentralized micro-lending marketplace that empowers unbanked gig workers and freelancers in emerging markets to access credit based on real financial behavior — not collateral or credit history.",
   keywords: [
-    "TrustLend",
+    "Lendrix App",
     "micro-lending",
     "DeFi",
     "blockchain",
@@ -38,18 +38,18 @@ export const metadata: Metadata = {
     "gig economy",
     "crypto lending",
   ],
-  authors: [{ name: "TrustLend" }],
+  authors: [{ name: "Lendrix App" }],
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
-    title: "TrustLend — Reputation-Based Micro-Lending",
+    title: "Lendrix App — Reputation-Based Micro-Lending",
     description:
       "Access credit based on real financial behavior. 1.7 billion unbanked adults deserve better.",
     type: "website",
-    images: [{ url: "/logo.png", width: 512, height: 512, alt: "TrustLend Logo" }],
+    images: [{ url: "/logo.png", width: 512, height: 512, alt: "Lendrix App Logo" }],
   },
 };
 
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
  * fonts, then wraps every page
  * in {@link ThemeProvider} configured for class-based theming
  * (`attribute="class"`) with the preference persisted under the
- * `trustlend-theme` localStorage key. `suppressHydrationWarning` on `<html>` is
+ * `lendrix-theme` localStorage key. `suppressHydrationWarning` on `<html>` is
  * required because next-themes mutates the `class` before React hydrates.
  *
  * @param props - Layout props.
@@ -79,7 +79,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          storageKey="trustlend-theme"
+          storageKey="lendrix-theme"
           disableTransitionOnChange
         >
           <ToastProvider>

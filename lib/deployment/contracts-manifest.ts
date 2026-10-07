@@ -25,7 +25,7 @@ export type ContractSpec = {
 /**
  * Deploy order matters: contracts with no dependencies first, then the ones
  * that need to be initialized with another contract's id (governance needs
- * lending + reputation; vesting and airdrop need the TLEND token).
+ * lending + reputation; vesting and airdrop need the LENDRIX token).
  */
 export const CONTRACTS: ContractSpec[] = [
   {
@@ -81,24 +81,24 @@ export const CONTRACTS: ContractSpec[] = [
     required: true,
   },
   {
-    key: "tlend_token",
-    label: "TlendTokenContract",
-    wasm: "tlend_token.wasm",
-    envVar: "NEXT_PUBLIC_TLEND_TOKEN_CONTRACT_ID",
+    key: "lendrix_token",
+    label: "LendrixTokenContract",
+    wasm: "lendrix_token.wasm",
+    envVar: "NEXT_PUBLIC_LENDRIX_TOKEN_CONTRACT_ID",
     required: false,
   },
   {
-    key: "tlend_vesting",
-    label: "TlendVestingContract",
-    wasm: "tlend_vesting.wasm",
-    envVar: "NEXT_PUBLIC_TLEND_VESTING_CONTRACT_ID",
+    key: "lendrix_vesting",
+    label: "LendrixVestingContract",
+    wasm: "lendrix_vesting.wasm",
+    envVar: "NEXT_PUBLIC_LENDRIX_VESTING_CONTRACT_ID",
     required: false,
   },
   {
-    key: "tlend_airdrop",
-    label: "TlendAirdropContract",
-    wasm: "tlend_airdrop.wasm",
-    envVar: "NEXT_PUBLIC_TLEND_AIRDROP_CONTRACT_ID",
+    key: "lendrix_airdrop",
+    label: "LendrixAirdropContract",
+    wasm: "lendrix_airdrop.wasm",
+    envVar: "NEXT_PUBLIC_LENDRIX_AIRDROP_CONTRACT_ID",
     required: false,
   },
   // ── Contracts the lending contract calls into (Phase 2.2) ────────────────

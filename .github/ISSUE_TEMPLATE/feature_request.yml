@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest an idea or feature enhancement for TrustLend.
+description: Suggest an idea or feature enhancement for Lendrix App.
 labels: ["enhancement"]
 body:
   - type: dropdown

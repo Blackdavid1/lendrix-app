@@ -1,12 +1,12 @@
 # Security Policy & Bug Bounty Program
 
-TrustLend is dedicated to ensuring the security and safety of our decentralized lending protocol built on Stellar and Soroban. We welcome white-hat security researchers and developers to inspect our smart contracts, API endpoints, and infrastructure to help identify potential vulnerabilities.
+Lendrix App is dedicated to ensuring the security and safety of our decentralized lending protocol built on Stellar and Soroban. We welcome white-hat security researchers and developers to inspect our smart contracts, API endpoints, and infrastructure to help identify potential vulnerabilities.
 
 ---
 
 ## 1. Reporting a Vulnerability
 
-If you discover a security vulnerability within TrustLend, **do NOT open a public GitHub issue** or publicly disclose the issue until it has been acknowledged, investigated, and remediated by the TrustLend team.
+If you discover a security vulnerability within Lendrix App, **do NOT open a public GitHub issue** or publicly disclose the issue until it has been acknowledged, investigated, and remediated by the Lendrix App team.
 
 ### Secure Disclosure Instructions
 1. **Email:** Send your report securely to `souvikmandals10@gmail.com` (Maintainer Email) or submit via GitHub Private Vulnerability Reporting.
@@ -44,8 +44,8 @@ If you discover a security vulnerability within TrustLend, **do NOT open a publi
 ### Out-of-Scope Assets & Issues
 - **Frontend/UI Bugs:** Visual presentation flaws, CSS issues, or non-security UI bugs without impact on user funds or data.
 - **Denial of Service (DoS):** Volumetric DoS/DDoS attacks against infrastructure or public Stellar RPC endpoints not caused by application design flaws.
-- **Social Engineering:** Phishing, spam, or social engineering attacks targeted at TrustLend maintainers or users.
-- **Third-Party Dependencies:** Vulnerabilities in underlying infrastructure (e.g. Stellar Core, Soroban SDK, Neon, Vercel) unless directly exploitable through TrustLend code logic.
+- **Social Engineering:** Phishing, spam, or social engineering attacks targeted at Lendrix App maintainers or users.
+- **Third-Party Dependencies:** Vulnerabilities in underlying infrastructure (e.g. Stellar Core, Soroban SDK, Neon, Vercel) unless directly exploitable through Lendrix App code logic.
 - **Known Issues:** Vulnerabilities already reported, tracked in public issues/PRs, or previously disclosed in security audit reports.
 
 ---
@@ -71,7 +71,7 @@ Bounties are rewarded in **USDC** or equivalent **XLM** based on severity assess
 - Do not access user data or private keys that do not belong to you.
 
 ### Safe Harbor Protection
-TrustLend considers security research conducted in accordance with this policy to be:
+Lendrix App considers security research conducted in accordance with this policy to be:
 - Authorized under applicable anti-hacking laws, and we will not initiate legal action against researchers for good-faith security research.
 - Exempt from restrictions in our Terms of Service that prohibit reverse engineering or probing.
 - Supported and valued as a essential contribution to protocol security.

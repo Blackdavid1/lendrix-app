@@ -15,7 +15,7 @@ import {
 import { AdminRiskParametersDashboard } from "@/components/dashboard/AdminRiskParametersDashboard";
 
 export const metadata = {
-  title: "Risk Parameters Dashboard — TrustLend Admin",
+  title: "Risk Parameters Dashboard — Lendrix App Admin",
   description: "Configure platform risk limits, collateral LTV parameters, interest rate curves, and protocol fees.",
 };
 
@@ -44,7 +44,7 @@ export default async function AdminRiskParametersPage() {
     >
       <AdminRiskParametersDashboard
         initialState={initialState}
-        adminEmail={user.email || "admin@trustlend.org"}
+        adminEmail={user.email || "admin@lendrix.app"}
       />
     </WorkspaceFrame>
   );

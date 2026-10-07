@@ -23,7 +23,7 @@
 import { useEffect } from "react";
 import { normalizeReferralCode } from "@/lib/referrals/codes";
 
-const STORAGE_KEY = "trustlend.referralCode";
+const STORAGE_KEY = "lendrix.referralCode";
 
 /** Read `?ref=` from the current URL and remember it for after sign-in. */
 export function stashReferralCodeFromUrl(): void {

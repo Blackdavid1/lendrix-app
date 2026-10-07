@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // =============================================================================
-// TrustLend — Decentralized Credit Score Oracle (off-chain poster)
+// Lendrix App — Decentralized Credit Score Oracle (off-chain poster)
 // =============================================================================
 // An AUTHORIZED Node service that:
 //   1. Takes verified Web2 / off-chain signals for a borrower (utility-bill
@@ -209,7 +209,7 @@ async function main() {
   const borrower = args.borrower;
   if (!borrower) throw new Error("Missing required --borrower <G... address>");
 
-  const provider = typeof args.provider === "string" ? args.provider : "trustlend-oracle";
+  const provider = typeof args.provider === "string" ? args.provider : "lendrix-oracle";
   const dryRun = Boolean(args["dry-run"]);
 
   const contractId = process.env.NEXT_PUBLIC_REPUTATION_CONTRACT_ID;
@@ -231,7 +231,7 @@ async function main() {
   const { score, dataSources } = computeCreditScore(signals);
 
   console.log("─────────────────────────────────────────────");
-  console.log("  TrustLend Credit Oracle");
+  console.log("  Lendrix App Credit Oracle");
   console.log("─────────────────────────────────────────────");
   console.log(`  Borrower     : ${borrower}`);
   console.log(`  Signals      : ${JSON.stringify(signals)}`);

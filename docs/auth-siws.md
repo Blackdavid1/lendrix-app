@@ -13,7 +13,7 @@ that proof into a signed session cookie.
 
 [SEP-0010](https://stellar.org/protocol/sep-10) defines Web Authentication via a
 challenge-response transaction — it's the same mechanism the SEP-24 fiat-ramp work
-(#21) already uses to auth with an *anchor*. Here TrustLend is both the **server**
+(#21) already uses to auth with an *anchor*. Here Lendrix App is both the **server**
 issuing the challenge and the **relying party** consuming the proof:
 
 ```
@@ -63,7 +63,7 @@ is the "Sign in with Stellar" button on the auth page — the only sign-in metho
 ([components/auth/AuthPageClient.tsx](../components/auth/AuthPageClient.tsx)). It
 reuses the existing multi-wallet signer
 ([lib/stellar/wallet.ts](../lib/stellar/wallet.ts)) so the challenge is signed exactly
-like any other TrustLend wallet transaction.
+like any other Lendrix App wallet transaction.
 
 Clicking the button opens the wallet picker
 ([components/ui/WalletSelectionModal.tsx](../components/ui/WalletSelectionModal.tsx),

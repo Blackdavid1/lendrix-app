@@ -1643,26 +1643,26 @@ dependencies = [
 ]
 
 [[package]]
-name = "tlend_airdrop"
+name = "lendrix_airdrop"
 version = "0.1.0"
 dependencies = [
  "soroban-sdk",
- "tlend_token",
+ "lendrix_token",
 ]
 
 [[package]]
-name = "tlend_token"
+name = "lendrix_token"
 version = "0.1.0"
 dependencies = [
  "soroban-sdk",
 ]
 
 [[package]]
-name = "tlend_vesting"
+name = "lendrix_vesting"
 version = "0.1.0"
 dependencies = [
  "soroban-sdk",
- "tlend_token",
+ "lendrix_token",
 ]
 
 [[package]]

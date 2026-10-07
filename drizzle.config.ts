@@ -14,7 +14,7 @@ export default defineConfig({
   schema: "./lib/db/schema.ts",
   out: "./drizzle",
   dbCredentials: {
-    url: process.env.DATABASE_URL ?? "postgres://localhost:5432/trustlend",
+    url: process.env.DATABASE_URL ?? "postgres://localhost:5432/lendrix",
   },
   strict: true,
   verbose: true,

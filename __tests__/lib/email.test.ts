@@ -85,8 +85,8 @@ describe("Resend Email Delivery", () => {
     process.env = {
       ...originalEnv,
       RESEND_API_KEY: "re_mock_api_key_123",
-      RESEND_FROM_EMAIL: "TrustLend <notifications@trustlend.finance>",
-      NEXT_PUBLIC_SITE_URL: "https://trustlend.finance",
+      RESEND_FROM_EMAIL: "Lendrix App <notifications@lendrix.finance>",
+      NEXT_PUBLIC_SITE_URL: "https://lendrix.finance",
     };
   });
 
@@ -126,7 +126,7 @@ describe("Resend Email Delivery", () => {
     const body = JSON.parse(options.body);
     expect(body.to).toBe("borrower@example.com");
     expect(body.subject).toBe("Loan Funded");
-    expect(body.html).toContain("https://trustlend.finance/dashboard/borrower/loans?loan=loan-abc");
+    expect(body.html).toContain("https://lendrix.finance/dashboard/borrower/loans?loan=loan-abc");
     expect(body.html).toContain("View Loan Details");
   });
 
@@ -146,7 +146,7 @@ describe("Resend Email Delivery", () => {
     const body = JSON.parse(fetchMock.mock.calls[0][1].body);
     expect(body.to).toBe("borrower@example.com");
     expect(body.subject).toBe("Loan Approved");
-    expect(body.html).toContain("https://trustlend.finance/dashboard/borrower/loans?loan=loan-def");
+    expect(body.html).toContain("https://lendrix.finance/dashboard/borrower/loans?loan=loan-def");
   });
 
   it("handles missing user email gracefully without throwing", async () => {

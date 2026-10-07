@@ -48,7 +48,7 @@ describe("wallet module ids", () => {
     }
   });
 
-  it("returns null for kit modules TrustLend does not register", () => {
+  it("returns null for kit modules Lendrix App does not register", () => {
     expect(getProviderFromModuleId("lobstr")).toBeNull();
     expect(getProviderFromModuleId("LEDGER")).toBeNull();
     expect(getProviderFromModuleId(undefined)).toBeNull();

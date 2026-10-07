@@ -36,7 +36,7 @@ const WALLET_OPTIONS: WalletOption[] = [
   {
     provider: "freighter",
     title: "Freighter",
-    description: "Use the browser extension wallet already supported by TrustLend.",
+    description: "Use the browser extension wallet already supported by Lendrix App.",
   },
   {
     provider: "walletconnect",
@@ -64,7 +64,7 @@ export function WalletSelectionModal({
   onSelect,
   onClose,
   title = "Select a Stellar wallet",
-  description = "Choose how you want to connect and sign transactions on TrustLend.",
+  description = "Choose how you want to connect and sign transactions on Lendrix App.",
 }: WalletSelectionModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const firstOptionRef = useRef<HTMLButtonElement>(null);

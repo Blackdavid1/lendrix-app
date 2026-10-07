@@ -75,7 +75,7 @@ export function HeroSection({ content, isAuthenticated = false }: HeroSectionPro
             </a>
           </motion.div>
 
-          <motion.ul {...enter(0.45)} className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-fg-muted" aria-label="TrustLend highlights">
+          <motion.ul {...enter(0.45)} className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-fg-muted" aria-label="Lendrix App highlights">
             {[
               { icon: Wallet, label: "Wallet sign-in, no passwords" },
               { icon: ShieldCheck, label: "Non-custodial on Stellar" },

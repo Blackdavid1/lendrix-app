@@ -180,7 +180,7 @@ function SuccessOverlay({
         </div>
 
         <p style={{ marginTop: "1rem", fontSize: "0.75rem", color: "var(--fg-subtle)" }}>
-          📋 Repayment recorded in TrustLend ledger. Your trust score has been
+          📋 Repayment recorded in Lendrix App ledger. Your trust score has been
           updated.
         </p>
       </div>
@@ -408,7 +408,7 @@ export function BorrowerRepayWidget({
       }
       const txHash: string = submitData.hash;
 
-      // 6. Record on TrustLend
+      // 6. Record on Lendrix App
       setStep("recording");
       const apiRes = await fetch("/api/loans/repay", {
         method: "POST",

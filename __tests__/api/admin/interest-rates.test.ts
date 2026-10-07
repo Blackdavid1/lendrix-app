@@ -58,7 +58,7 @@ describe("GET /api/admin/interest-rates", () => {
     vi.clearAllMocks();
     mockRequireApiAdmin.mockResolvedValue({
       id: "admin-1",
-      email: "admin@trustlend.org",
+      email: "admin@lendrix.app",
     });
   });
 
@@ -90,7 +90,7 @@ describe("GET /api/admin/interest-rates", () => {
       amountTiers: [],
       reputationTiers: [],
       notes: "seed",
-      updatedByEmail: "admin@trustlend.org",
+      updatedByEmail: "admin@lendrix.app",
       updatedAt: null,
     });
 
@@ -120,7 +120,7 @@ describe("POST /api/admin/interest-rates", () => {
     vi.clearAllMocks();
     mockRequireApiAdmin.mockResolvedValue({
       id: "admin-1",
-      email: "admin@trustlend.org",
+      email: "admin@lendrix.app",
     });
   });
 
